@@ -1,4 +1,5 @@
 
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -16,157 +17,309 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #111111;
-            color: white;
+            background: #0b0b0b;
+            color: #ffffff;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
         }
 
-        .container {
+        .page {
             width: 100%;
             max-width: 480px;
-            padding: 25px 20px 35px;
+            margin: auto;
+            padding: 22px 18px 30px;
         }
 
-        .logo {
+        /* LOGO */
+
+        .brand {
             text-align: center;
-            font-size: 28px;
+            font-size: 23px;
             font-weight: 800;
-            margin-bottom: 35px;
-        }
-
-        .logo span {
-            color: #ff6a00;
-        }
-
-        .business {
-            text-align: center;
+            letter-spacing: -0.5px;
             margin-bottom: 30px;
         }
 
+        .brand span {
+            color: #ff6a00;
+        }
+
+        /* BUSINESS CARD */
+
+        .business-card {
+            background: linear-gradient(145deg, #1c1c1c, #111111);
+            border: 1px solid #292929;
+            border-radius: 24px;
+            padding: 28px 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+            margin-bottom: 18px;
+        }
+
         .business-logo {
-            width: 90px;
-            height: 90px;
+            width: 86px;
+            height: 86px;
+            margin: auto;
             border-radius: 50%;
             background: #ff6a00;
-            margin: 0 auto 15px;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            font-weight: bold;
+            font-size: 34px;
+            font-weight: 800;
+            box-shadow: 0 8px 25px rgba(255,106,0,0.25);
+            margin-bottom: 16px;
         }
 
-        h1 {
+        .business-name {
             font-size: 25px;
+            font-weight: 800;
             margin-bottom: 8px;
         }
 
-        .location {
-            color: #aaaaaa;
-            font-size: 15px;
+        .address {
+            color: #999999;
+            font-size: 14px;
         }
+
+        /* BUTTONS */
 
         .buttons {
             display: flex;
             flex-direction: column;
-            gap: 13px;
+            gap: 12px;
         }
 
         .button {
-            display: block;
+            width: 100%;
+            min-height: 62px;
+            border-radius: 17px;
             text-decoration: none;
-            color: white;
-            background: #222222;
-            border: 1px solid #333333;
-            padding: 17px;
-            border-radius: 13px;
-            text-align: center;
-            font-size: 17px;
-            font-weight: 600;
-            transition: 0.2s;
+            color: #ffffff;
+            background: #181818;
+            border: 1px solid #292929;
+            display: flex;
+            align-items: center;
+            padding: 0 18px;
+            transition: 0.2s ease;
         }
 
         .button:hover {
-            background: #ff6a00;
             transform: translateY(-2px);
+            border-color: #ff6a00;
         }
+
+        .icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 14px;
+            flex-shrink: 0;
+        }
+
+        .button-text {
+            text-align: left;
+            flex: 1;
+        }
+
+        .button-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .button-description {
+            font-size: 12px;
+            color: #888888;
+        }
+
+        .arrow {
+            color: #666666;
+            font-size: 20px;
+        }
+
+        /* GOOGLE */
 
         .google {
             background: #ff6a00;
             border-color: #ff6a00;
         }
 
+        .google .icon {
+            background: rgba(0,0,0,0.15);
+        }
+
+        .google .button-description {
+            color: rgba(255,255,255,0.75);
+        }
+
+        .google .arrow {
+            color: white;
+        }
+
+        /* FOOTER */
+
         .footer {
             text-align: center;
-            margin-top: 35px;
-            color: #777777;
-            font-size: 13px;
+            margin-top: 28px;
+            color: #666666;
+            font-size: 12px;
+            line-height: 1.6;
         }
 
         .footer strong {
             color: #ff6a00;
+            font-size: 14px;
+        }
+
+        @media (max-width: 360px) {
+            .page {
+                padding: 18px 14px 25px;
+            }
+
+            .business-name {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-    <div class="logo">
+    <div class="brand">
         tamburada<span>.</span>
     </div>
 
-    <div class="business">
+
+    <!-- İŞLETME -->
+
+    <div class="business-card">
 
         <div class="business-logo">
             S
         </div>
 
-        <h1>Serenay Emlak</h1>
+        <div class="business-name">
+            Serenay Emlak
+        </div>
 
-        <div class="location">
+        <div class="address">
             📍 Çanakkale
         </div>
 
     </div>
 
+
+    <!-- BUTONLAR -->
+
     <div class="buttons">
+
+        <!-- GOOGLE YORUM -->
 
         <a class="button google"
            href="https://search.google.com/local/writereview?placeid=ChIJAVlbshWpsRQRW-G_Pxevwmo"
            target="_blank">
-            ⭐ Google'da Yorum Yap
+
+            <div class="icon">
+                ⭐
+            </div>
+
+            <div class="button-text">
+                <div class="button-title">
+                    Google'da Yorum Yap
+                </div>
+
+                <div class="button-description">
+                    Deneyiminizi paylaşın
+                </div>
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
         </a>
 
-        <a class="button"
-           href="https://www.instagram.com/"
-           target="_blank">
-            📸 Instagram
-        </a>
+
+        <!-- WHATSAPP -->
 
         <a class="button"
            href="https://wa.me/905305441777"
            target="_blank">
-            💬 WhatsApp'tan Ulaş
+
+            <div class="icon">
+                💬
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    WhatsApp'tan Ulaş
+                </div>
+
+                <div class="button-description">
+                    Hızlıca iletişime geçin
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
         </a>
+
+
+        <!-- KONUM -->
 
         <a class="button"
            href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14b1a915b25b5901:0x6ac2af173fbfe15b?sa=X&ved=1t:8290&hl=tr-TR&gl=tr&ictx=111&cshid=1790316664085779"
            target="_blank">
-            📍 Konumu Aç
+
+            <div class="icon">
+                📍
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    Konumu Aç
+                </div>
+
+                <div class="button-description">
+                    Google Maps'te yol tarifi alın
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
         </a>
 
     </div>
 
+
+    <!-- FOOTER -->
+
     <div class="footer">
-        <strong>tamburada</strong><br>
+
+        <strong>tamburada.</strong><br>
+
         Dijital işletme kartı
+
     </div>
 
 </div>
 
 </body>
 </html>
+```
