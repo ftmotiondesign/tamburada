@@ -1,4 +1,3 @@
-
 ```html
 <!DOCTYPE html>
 <html lang="tr">
@@ -29,21 +28,16 @@
             padding: 22px 18px 30px;
         }
 
-        /* LOGO */
-
         .brand {
             text-align: center;
             font-size: 23px;
             font-weight: 800;
-            letter-spacing: -0.5px;
             margin-bottom: 30px;
         }
 
         .brand span {
             color: #ff6a00;
         }
-
-        /* BUSINESS CARD */
 
         .business-card {
             background: linear-gradient(145deg, #1c1c1c, #111111);
@@ -81,8 +75,6 @@
             color: #999999;
             font-size: 14px;
         }
-
-        /* BUTTONS */
 
         .buttons {
             display: flex;
@@ -143,8 +135,6 @@
             font-size: 20px;
         }
 
-        /* GOOGLE */
-
         .google {
             background: #ff6a00;
             border-color: #ff6a00;
@@ -162,7 +152,19 @@
             color: white;
         }
 
-        /* FOOTER */
+        .video {
+            background: linear-gradient(145deg, #242424, #171717);
+            border-color: #ff6a00;
+        }
+
+        .video .icon {
+            background: #ff6a00;
+        }
+
+        .share {
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
 
         .footer {
             text-align: center;
@@ -175,6 +177,14 @@
         .footer strong {
             color: #ff6a00;
             font-size: 14px;
+        }
+
+        .share-message {
+            text-align: center;
+            color: #ff6a00;
+            font-size: 13px;
+            margin-top: 10px;
+            display: none;
         }
 
         @media (max-width: 360px) {
@@ -221,6 +231,7 @@
 
     <div class="buttons">
 
+
         <!-- GOOGLE YORUM -->
 
         <a class="button google"
@@ -232,6 +243,7 @@
             </div>
 
             <div class="button-text">
+
                 <div class="button-title">
                     Google'da Yorum Yap
                 </div>
@@ -239,6 +251,35 @@
                 <div class="button-description">
                     Deneyiminizi paylaşın
                 </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- TELEFON -->
+
+        <a class="button"
+           href="tel:+905305441777">
+
+            <div class="icon">
+                📞
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    Telefonla Ara
+                </div>
+
+                <div class="button-description">
+                    0530 544 17 77
+                </div>
+
             </div>
 
             <div class="arrow">
@@ -305,6 +346,68 @@
 
         </a>
 
+
+        <!-- KONUM VİDEOSU -->
+
+        <a class="button video"
+           href="#"
+           onclick="alert('Konum videosu yakında eklenecek.'); return false;">
+
+            <div class="icon">
+                ▶
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    Konum Videosunu İzle
+                </div>
+
+                <div class="button-description">
+                    İşletmenin konumunu videoda keşfedin
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </a>
+
+
+        <!-- PAYLAŞ -->
+
+        <button class="button share"
+                onclick="sharePage()">
+
+            <div class="icon">
+                ↗
+            </div>
+
+            <div class="button-text">
+
+                <div class="button-title">
+                    İşletmeyi Paylaş
+                </div>
+
+                <div class="button-description">
+                    Bu sayfayı arkadaşlarınıza gönderin
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                ›
+            </div>
+
+        </button>
+
+    </div>
+
+
+    <div id="shareMessage" class="share-message">
+        ✓ Bağlantı kopyalandı
     </div>
 
 
@@ -319,6 +422,39 @@
     </div>
 
 </div>
+
+
+<script>
+
+function sharePage() {
+
+    const shareData = {
+        title: "Serenay Emlak",
+        text: "Serenay Emlak iletişim ve konum bilgileri",
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+
+        navigator.share(shareData);
+
+    } else {
+
+        navigator.clipboard.writeText(window.location.href);
+
+        const message = document.getElementById("shareMessage");
+
+        message.style.display = "block";
+
+        setTimeout(function() {
+            message.style.display = "none";
+        }, 2500);
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>
