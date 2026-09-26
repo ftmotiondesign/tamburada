@@ -259,6 +259,18 @@ a.btn.whatsapp-link:hover,
   background-color: #1ebe5d !important;
   border-color: #1ebe5d !important;
 }
+
+    /* İşletmeme ne fayda sağlar? */
+    .benefits{background:linear-gradient(180deg,#101010 0%,#0b0b0b 100%)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .benefit-card{background:#181818;border:1px solid #353535;border-radius:20px;padding:24px;transition:.25s}
+    .benefit-card:hover{transform:translateY(-4px);border-color:#ff6a00}
+    .benefit-icon{width:48px;height:48px;border-radius:15px;background:#2a180d;color:#ff8a26;display:grid;place-items:center;font-size:23px;margin-bottom:18px}
+    .benefit-card h3{font-size:17px;color:#fff;margin-bottom:8px}
+    .benefit-card p{font-size:13px;color:#c2c2c2}
+    @media(max-width:900px){.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.benefits-grid{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -397,6 +409,22 @@ a.btn.whatsapp-link:hover,
           </div>
         </div>
         <p class="portfolio-note">Videoları oynatmak için GitHub deposundaki videos klasörüne ilgili MP4 dosyalarını yükleyin.</p>
+      </div>
+    </section>
+
+<section class="section benefits" id="faydalar">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">BANA NE FAYDASI OLACAK?</div>
+          <h2>İşletmeme Ne Fayda Sağlar?</h2>
+          <p>Sadece bir tasarım değil; müşterilerinizin sizi bulmasını, tanımasını ve size daha kolay ulaşmasını sağlayan dijital çözümler.</p>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card"><div class="benefit-icon">📍</div><h3>Daha Kolay Bulunun</h3><p>Konum videolarıyla müşterilerinize işletmenizin nerede olduğunu ve nasıl ulaşabileceklerini hızlıca gösterin.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">📲</div><h3>Tek Dokunuşla Ulaşsınlar</h3><p>NFC ve dijital kart sayesinde telefon, WhatsApp, Instagram, web sitesi ve konum bilgilerinize tek noktadan erişilsin.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">⭐</div><h3>Daha Fazla Google Yorumu</h3><p>Google yorum kartıyla müşterileriniz değerlendirme sayfanıza hızlıca ulaşsın; yorum bırakma süreci kolaylaşsın.</p></article>
+          <article class="benefit-card"><div class="benefit-icon">🎬</div><h3>Daha Dikkat Çekici Tanıtım</h3><p>Görsellerinizi Reels videolara dönüştürerek sosyal medyada işletmenizi daha hareketli ve etkileyici biçimde sunun.</p></article>
+        </div>
       </div>
     </section>
 
