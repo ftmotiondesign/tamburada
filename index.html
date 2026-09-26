@@ -297,7 +297,31 @@ a.btn.whatsapp-link:hover,
   border-color:#ff8a26!important;
   transform:translateY(-2px);
 }
+.ai-reels-float{
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  z-index: 9999;
+  white-space: nowrap;
+  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+}
 
+@media (min-width: 769px){
+  .ai-reels-float{
+    left: auto;
+    right: 20px;
+    bottom: 100px;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px){
+  .ai-reels-float{
+    width: calc(100% - 32px);
+    justify-content: center;
+  }
+}
 
 /* Örnek çalışmalar - 1080x1920 GIF alanları */
 .portfolio-gif-wrap{
@@ -367,7 +391,7 @@ a.btn.whatsapp-link:hover,
           <div class="hero-actions">
             <a class="btn btn-primary whatsapp-link" href="#">Detaylı Bilgi WhatsApp <span>↗</span></a>
             <a class="btn btn-light" href="#ornekler">Örnek Çalışmaları Gör ↓</a>
-            <a class="btn btn-light ai-reels-link" href="gorselden-video.html">AI Görselden Reels Video →</a>
+            <a class="btn btn-light ai-reels-link ai-reels-float" href="gorselden-video.html">AI Görselden Reels Video →</a>
           </div>
           <div class="trust"><div class="trust-icons"><span>▶</span><span>⌁</span><span>▦</span></div><span>Video, dijital kart ve konum çözümleri tek yerde.</span></div>
         </div>
