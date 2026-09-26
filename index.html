@@ -343,6 +343,7 @@ a.btn.whatsapp-link:hover,
         <div class="builder-divider"></div><h4>Ek hizmetler</h4><div class="addon-list">
           <label class="addon"><input type="checkbox" class="p3-addon" data-price="100" data-name="Seslendirme + bina resmi"><span class="check-ui"></span><span class="addon-text"><b>Seslendirme + bina resmi</b></span><strong>+100 TL</strong></label>
           <label class="addon"><input type="checkbox" class="p3-addon" data-price="250" data-name="Ek 30 saniye"><span class="check-ui"></span><span class="addon-text"><b>Ek 30 saniye</b></span><strong>+250 TL</strong></label>
+           <label class="addon"><input type="checkbox" class="p1-addon" data-price="250" data-name="1 adet yapay zeka görselini 30 saniyelik Reels videoya çevirme"><span class="check-ui"></span><span class="addon-text"><b>1 adet yapay zeka görselini 30 saniyelik Reels videoya çevirme</b></span><strong>+250 TL</strong></label>
           <label class="addon"><input type="checkbox" class="p3-addon" data-price="250" data-name="Video sonuna konum videosu hazırlama"><span class="check-ui"></span><span class="addon-text"><b>Video sonuna konum videosu hazırlama</b></span><strong>+250 TL</strong></label>
         </div><div class="builder-total"><div><small>Toplam</small><div id="p3Total">250 TL</div></div><a class="btn btn-primary whatsapp-link" id="p3Order" href="#">WhatsApp'tan Sipariş Ver ↗</a></div>
       </div>
@@ -435,11 +436,11 @@ a.btn.whatsapp-link:hover,
     /*
       YAYINA ALMADAN ÖNCE:
       1) WHATSAPP_NUMBER alanına ülke koduyla birlikte numaranızı yazın.
-         Örnek Türkiye: 905XXXXXXXXX (başında + veya 0 kullanmayın)
+         Örnek Türkiye: 9053478151505 (başında + veya 0 kullanmayın)
       2) İsterseniz paket metinlerini ve fiyatları HTML içinden düzenleyin.
       3) Portföy kutularını kendi video bağlantılarınızla değiştirin.
     */
-    const WHATSAPP_NUMBER = "905XXXXXXXXX";
+    const WHATSAPP_NUMBER = "9053478151505";
     const DEFAULT_MESSAGE = "Merhaba, Tamburada hizmetleri ve paketleri hakkında bilgi almak istiyorum.";
     const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
     document.querySelectorAll(".whatsapp-link").forEach(link => link.href = waUrl);
