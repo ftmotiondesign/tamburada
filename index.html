@@ -299,44 +299,6 @@ a.btn.whatsapp-link:hover,
 }
 
 
-/* Örnek çalışmalar - 1080x1920 GIF alanları */
-.portfolio-gif-wrap{
-  width:100%;
-  aspect-ratio:9/16;
-  max-height:520px;
-  background:#080808;
-  overflow:hidden;
-  position:relative;
-}
-.portfolio-gif{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  background:#080808;
-}
-.gif-placeholder{
-  position:absolute;
-  inset:0;
-  display:none;
-  place-items:center;
-  text-align:center;
-  padding:20px;
-  color:#a9a9a9;
-  background:linear-gradient(180deg,#262626,#111);
-  font-size:13px;
-}
-.gif-placeholder b{
-  display:block;
-  color:#ff7a18;
-  font-size:16px;
-  margin-bottom:6px;
-}
-@media(max-width:700px){
-  .portfolio-gif-wrap{max-height:none}
-}
-
-
 /* AI Görselden Reels butonu - sabit görünür */
 .ai-reels-float{
   position:fixed!important;
@@ -362,6 +324,41 @@ a.btn.whatsapp-link:hover,
     justify-content:center!important;
     text-align:center!important;
   }
+}
+
+
+/* Portföy MP4 düzeni - 3 kart yan yana */
+.portfolio-grid{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:20px!important;
+  align-items:start!important;
+}
+.portfolio-item{
+  display:flex!important;
+  flex-direction:column!important;
+  width:100%!important;
+  min-width:0!important;
+  overflow:hidden!important;
+}
+.portfolio-video-wrap{
+  width:100%!important;
+  aspect-ratio:9/16!important;
+  max-height:none!important;
+  background:#080808!important;
+  overflow:hidden!important;
+}
+.portfolio-video{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:cover!important;
+}
+@media(max-width:900px){
+  .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+}
+@media(max-width:680px){
+  .portfolio-grid{grid-template-columns:1fr!important;}
 }
 
 </style>
@@ -463,10 +460,11 @@ a.btn.whatsapp-link:hover,
         <div class="section-head"><div class="eyebrow">Portföy</div><h2>Örnek çalışmalarımız</h2><p>Buradaki alanlara tamamladığınız tanıtım videolarını, müşteri çalışmalarını veya proje bağlantılarını ekleyebilirsiniz.</p></div>
         <div class="portfolio-grid">
           <div class="portfolio-item">
-            <div class="portfolio-gif-wrap">
-              <img class="portfolio-gif" src="./gifs/konum-tanitim.gif" alt="Konum Tanıtımı GIF"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <div class="gif-placeholder"><div><b>1080 × 1920 GIF</b>konum-tanitim.gif dosyasını <strong>gifs</strong> klasörüne yükleyin.</div></div>
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" aria-label="Konum Tanıtımı Videosu">
+                <source src="./videos/konum-tanitim.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
             </div>
             <div class="portfolio-caption">
               <span class="portfolio-kicker">01 • KONUM TANITIMI</span>
@@ -474,11 +472,13 @@ a.btn.whatsapp-link:hover,
               <p>İşletmenizin konumunu ve ulaşım rotasını tanıtan örnek çalışma.</p>
             </div>
           </div>
+
           <div class="portfolio-item">
-            <div class="portfolio-gif-wrap">
-              <img class="portfolio-gif" src="./gifs/nfc-qr-kart.gif" alt="NFC ve QR Kart GIF"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <div class="gif-placeholder"><div><b>1080 × 1920 GIF</b>nfc-qr-kart.gif dosyasını <strong>gifs</strong> klasörüne yükleyin.</div></div>
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" aria-label="NFC ve QR Kart Videosu">
+                <source src="./videos/nfc-qr-kart.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
             </div>
             <div class="portfolio-caption">
               <span class="portfolio-kicker">02 • NFC + QR</span>
@@ -486,11 +486,13 @@ a.btn.whatsapp-link:hover,
               <p>Tek dokunuşla dijital kart ve bağlantı deneyimi.</p>
             </div>
           </div>
+
           <div class="portfolio-item">
-            <div class="portfolio-gif-wrap">
-              <img class="portfolio-gif" src="./gifs/gorselden-video.gif" alt="Görselden Video GIF"
-                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
-              <div class="gif-placeholder"><div><b>1080 × 1920 GIF</b>gorselden-video.gif dosyasını <strong>gifs</strong> klasörüne yükleyin.</div></div>
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" aria-label="Görselden Video">
+                <source src="./videos/gorselden-video.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
             </div>
             <div class="portfolio-caption">
               <span class="portfolio-kicker">03 • YAPAY ZEKÂ</span>
@@ -499,7 +501,7 @@ a.btn.whatsapp-link:hover,
             </div>
           </div>
         </div>
-        <p class="portfolio-note">GIF'leri göstermek için GitHub deposunda <b>gifs</b> klasörü oluşturup 1080×1920 GIF dosyalarını belirtilen adlarla yükleyin.</p>
+        <p class="portfolio-note">Videoları göstermek için GitHub deposunda <b>videos</b> klasörü oluşturup 1080×1920 MP4 dosyalarını belirtilen adlarla yükleyin.</p>
       </div>
     </section>
 
