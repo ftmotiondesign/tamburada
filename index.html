@@ -132,6 +132,13 @@
       .footer-inner{flex-direction:column;text-align:center}.topbar{font-size:11px}
     }
     @media(max-width:420px){.steps-grid{grid-template-columns:1fr}.hero-actions .btn{width:100%}.float-card{padding:11px}.float-card strong{font-size:11px}.float-card small{font-size:10px}}
+  
+    .package-cta{display:flex;align-items:center;justify-content:center;gap:8px;min-height:86px;margin-top:18px}
+    .package-cta .btn{flex:1;white-space:nowrap}
+    .package-mascot{width:76px;height:112px;object-fit:contain;object-position:center bottom;flex:0 0 auto;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+    .package-card-middle .package-mascot{width:92px;height:132px}
+    @media(max-width:560px){.package-cta{gap:3px;min-height:74px}.package-mascot{width:56px;height:90px}.package-card-middle .package-mascot{width:65px;height:100px}.package-cta .btn{font-size:12px;padding:12px 10px}}
+
   </style>
 </head>
 <body>
@@ -184,20 +191,20 @@
             <h3>Konum Videosu</h3><p class="price-desc">İşletmesini etkili bir konum videosuyla tanıtmak isteyenlere.</p>
             <div class="price">Teklif Al</div><div class="price-note">İşletmeye ve içerik kapsamına göre</div>
             <ul class="features"><li>İşletmeye özel konum tanıtım videosu</li><li>Rota ve konum vurguları</li><li>Sosyal medya paylaşımına uygun format</li><li>İşletme bilgileriyle kapanış ekranı</li></ul>
-            <a class="btn btn-light whatsapp-link" href="#">250 TL</a>
+            <div class="package-cta"><img class="package-mascot" src="assets/maskot-1.png" alt="Tamburada maskotu"><div class="package-cta"><a class="btn btn-light whatsapp-link" href="#">Bu Paketi Sor</a><img class="package-mascot" src="assets/maskot-1.png" alt="Tamburada maskotu"></div></div>
           </article>
           <article class="price-card featured">
             <span class="popular">ÇOK YÖNLÜ ÇÖZÜM</span>
             <h3>Video + Dijital Kart</h3><p class="price-desc">Tanıtım videosunu NFC ve QR dijital kartla birleştirin.</p>
             <div class="price">Teklif Al</div><div class="price-note">Kart ve üretim tercihlerine göre</div>
             <ul class="features"><li>Konum tanıtım videosu</li><li>NFC dijital kart çözümü</li><li>QR dijital kart ve bağlantı</li><li>İşletme iletişim bilgileri</li><li>Dijital paylaşım için hazır içerik</li></ul>
-            <a class="btn btn-primary whatsapp-link" href="#">650 TL↗</a>
+            <div class="package-cta package-card-middle"><img class="package-mascot" src="assets/maskot-2.png" alt="Tamburada maskotu telefonla harita gösteriyor"><a class="btn btn-primary whatsapp-link" href="#">Bu Paketi Sor ↗</a></div>
           </article>
           <article class="price-card">
             <h3>Kurumsal Tanıtım</h3><p class="price-desc">Daha kapsamlı ve zengin görsel sunum isteyen işletmelere.</p>
             <div class="price">Teklif Al</div><div class="price-note">İçerik ve çekim kapsamına göre</div>
             <ul class="features"><li>Konum tanıtım videosu</li><li>NFC ve QR dijital kart hizmetleri</li><li>1 adet görselden videoya dönüşüm</li><li>3D mekân çekimi hizmeti</li><li>İşletmeye özel dijital sunum</li></ul>
-            <a class="btn btn-light whatsapp-link" href="#">200 tl</a>
+            <a class="btn btn-light whatsapp-link" href="#">Bu Paketi Sor</a>
           </article>
         </div>
         <p class="price-edit">Not: Fiyatlar ve hizmet kapsamları işletmenizin güncel teklifine göre düzenlenmelidir.</p>
