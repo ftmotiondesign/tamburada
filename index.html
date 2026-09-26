@@ -7,113 +7,113 @@
   <title>Tamburada | İşletmenizi Dijitalde Öne Çıkarın</title>
   <style>
     :root{
-      --ink:#101828; --muted:#667085; --paper:#f7f9fc; --white:#fff;
-      --blue:#2457ff; --cyan:#19c6d2; --line:#e7ebf3; --navy:#101b3f;
-      --shadow:0 18px 50px rgba(20,38,90,.12); --radius:24px;
+      --ink:#ffffff; --muted:#c2c2c2; --paper:#101010; --white:#181818;
+      --blue:#ff6a00; --cyan:#ff8a26; --line:#343434; --navy:#080808;
+      --shadow:0 18px 50px rgba(0,0,0,.45); --radius:24px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:#101010;line-height:1.6}
     a{text-decoration:none;color:inherit}
     button{font:inherit}
     .container{width:min(1160px,calc(100% - 40px));margin:auto}
-    .topbar{background:var(--navy);color:#fff;text-align:center;padding:9px 16px;font-size:13px;letter-spacing:.2px}
+    .topbar{background:#080808;color:#fff;text-align:center;padding:9px 16px;font-size:13px;letter-spacing:.2px}
     .topbar b{color:#8ff6ef}
-    header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(231,235,243,.8)}
+    header{position:sticky;top:0;z-index:20;background:rgba(12,12,12,.96);backdrop-filter:blur(14px);border-bottom:1px solid #292929}
     .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:900;letter-spacing:-1.2px}
-    .brand-mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-weight:900;box-shadow:0 8px 20px #2457ff40}
-    .brand span:last-child{color:var(--blue)}
+    .brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:900;letter-spacing:-1.2px;color:#fff}
+    .brand-mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#ff6a00,#ff8a26);display:grid;place-items:center;color:white;font-weight:900;box-shadow:0 8px 20px #2457ff40}
+    .brand span:last-child{color:#ff6a00}
     .navlinks{display:flex;align-items:center;gap:27px;color:#475467;font-weight:650;font-size:14px}
     .navlinks a:hover{color:var(--blue)}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 22px;font-weight:800;cursor:pointer;transition:.2s;white-space:nowrap}
-    .btn-primary{background:linear-gradient(110deg,var(--blue),#4b7bff);color:#fff;box-shadow:0 10px 25px #2457ff35}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 30px #2457ff45}
-    .btn-light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+    .btn-primary{background:#ff6a00;color:#fff;box-shadow:0 10px 25px #ff6a0040}
+    .btn-primary:hover{transform:translateY(-2px);background:#ff8126;box-shadow:0 15px 30px #ff6a0050}
+    .btn-light{background:#1c1c1c;color:#fff;border:1px solid #3a3a3a}
     .menu-toggle{display:none;background:none;border:0;font-size:26px}
-    .hero{position:relative;overflow:hidden;padding:84px 0 78px;background:radial-gradient(ellipse at 85% 15%,#d9fbff 0,transparent 32%),radial-gradient(ellipse at 8% 20%,#e5eaff 0,transparent 35%),linear-gradient(180deg,#fff 0%,#f6f8ff 100%)}
+    .hero{position:relative;overflow:hidden;padding:84px 0 78px;background:radial-gradient(ellipse at 85% 15%,#4a210d 0,transparent 32%),radial-gradient(ellipse at 8% 20%,#24170f 0,transparent 35%),linear-gradient(180deg,#111 0%,#101010 100%)}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:#edf2ff;color:#294bd1;font-size:12px;font-weight:850;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px}
-    .dot{width:8px;height:8px;background:#17c6b5;border-radius:50%;box-shadow:0 0 0 5px #17c6b51c}
-    h1{font-size:clamp(39px,5vw,66px);line-height:1.04;letter-spacing:-2.8px;margin-bottom:22px;color:#101828}
-    h1 em{font-style:normal;background:linear-gradient(100deg,var(--blue),#08b9c6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:99px;background:#2a180d;color:#ff9b50;font-size:12px;font-weight:850;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px}
+    .dot{width:8px;height:8px;background:#ff6a00;border-radius:50%;box-shadow:0 0 0 5px #17c6b51c}
+    h1{font-size:clamp(39px,5vw,66px);line-height:1.04;letter-spacing:-2.8px;margin-bottom:22px;color:#fff}
+    h1 em{font-style:normal;background:linear-gradient(100deg,#ff6a00,#ffad61);-webkit-background-clip:text;background-clip:text;color:transparent}
     .hero p{font-size:18px;color:var(--muted);max-width:570px;margin-bottom:30px}
     .hero-actions{display:flex;gap:13px;flex-wrap:wrap}
-    .trust{display:flex;align-items:center;gap:12px;margin-top:27px;color:#667085;font-size:13px}
+    .trust{display:flex;align-items:center;gap:12px;margin-top:27px;color:#c2c2c2;font-size:13px}
     .trust-icons{display:flex}
     .trust-icons span{width:29px;height:29px;border-radius:50%;border:2px solid white;background:#dfe7ff;display:grid;place-items:center;margin-left:-7px;font-size:12px}
     .trust-icons span:first-child{margin-left:0;background:#d9fff7}
     .visual-wrap{position:relative;min-height:460px;display:grid;place-items:center}
     .glow{position:absolute;width:390px;height:390px;border-radius:50%;background:linear-gradient(135deg,#c6d3ff,#b9f7f1);filter:blur(2px);opacity:.65}
-    .mockup{position:relative;width:min(390px,100%);background:#fff;border:8px solid #fff;border-radius:30px;box-shadow:0 30px 80px #172d6b26;overflow:hidden;transform:rotate(2deg)}
-    .mock-top{height:210px;background:linear-gradient(135deg,#15265d,#275bff 60%,#21cbd0);padding:25px;color:white;position:relative;overflow:hidden}
+    .mockup{position:relative;width:min(390px,100%);background:#181818;border:8px solid #fff;border-radius:30px;box-shadow:0 30px 80px #172d6b26;overflow:hidden;transform:rotate(2deg)}
+    .mock-top{height:210px;background:linear-gradient(135deg,#3b1908,#ff6a00 60%,#ff9a3d);padding:25px;color:white;position:relative;overflow:hidden}
     .mock-top:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ffffff35;border-radius:50%;right:-70px;top:35px;box-shadow:0 0 0 25px #ffffff0b,0 0 0 50px #ffffff08}
     .mock-label{font-size:11px;letter-spacing:1px;opacity:.8;font-weight:800}
-    .mock-title{font-size:28px;line-height:1.1;font-weight:900;margin-top:24px;max-width:220px;position:relative;z-index:1}
-    .mock-pill{display:inline-block;margin-top:18px;background:#fff;color:#1e49d8;border-radius:30px;padding:7px 12px;font-size:10px;font-weight:900}
+    .mock-title{font-size:28px;line-height:1.1;font-weight:900;margin-top:24px;max-width:220px;position:relative;z-index:1;color:#fff}
+    .mock-pill{display:inline-block;margin-top:18px;background:#fff;color:#b84b00;border-radius:30px;padding:7px 12px;font-size:10px;font-weight:900}
     .mock-bottom{padding:20px}
-    .mock-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #eef1f6}
+    .mock-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #343434;color:#fff}
     .mock-row:last-child{border:0}
-    .mock-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#edf2ff;font-size:19px}
+    .mock-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:13px;background:#332013;color:#ff8a26;font-size:19px}
     .mock-row b{display:block;font-size:13px}
-    .mock-row small{color:#98a2b3;font-size:11px}
-    .float-card{position:absolute;background:white;border:1px solid #edf0f6;box-shadow:var(--shadow);border-radius:18px;padding:15px 18px;display:flex;align-items:center;gap:12px;z-index:3}
+    .mock-row small{color:#b6b6b6;font-size:11px}
+    .float-card{position:absolute;background:#1c1c1c;color:#fff;border:1px solid #393939;box-shadow:var(--shadow);border-radius:18px;padding:15px 18px;display:flex;align-items:center;gap:12px;z-index:3}
     .float-card strong{display:block;font-size:13px}.float-card small{display:block;color:var(--muted);font-size:11px}
-    .float-card .mini{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:#e9fbf8;font-size:20px}
+    .float-card .mini{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;background:#3a210f;color:#ff8a26;font-size:20px}
     .float-one{left:-10px;top:70px}.float-two{right:-15px;bottom:60px}
-    .section{padding:88px 0}
+    .section{padding:88px 0;background:#101010}
     .section-head{text-align:center;max-width:690px;margin:0 auto 45px}
     .section-head .eyebrow{margin-bottom:14px}
-    h2{font-size:clamp(30px,4vw,44px);line-height:1.13;letter-spacing:-1.5px;margin-bottom:14px}
-    .section-head p{color:var(--muted);font-size:16px}
+    h2{font-size:clamp(30px,4vw,44px);line-height:1.13;letter-spacing:-1.5px;margin-bottom:14px;color:#fff}
+    .section-head p{color:#c2c2c2;font-size:16px}
     .services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:29px;box-shadow:0 8px 30px #13275a08;transition:.25s}
+    .service-card{background:#1a1a1a;border:1px solid #333;border-radius:var(--radius);padding:29px;box-shadow:0 8px 30px #13275a08;transition:.25s}
     .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-    .service-icon{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#e9edff,#e4fffb);display:grid;place-items:center;font-size:27px;margin-bottom:22px}
-    .service-card h3{font-size:20px;margin-bottom:9px}
-    .service-card p{font-size:14px;color:var(--muted)}
-    .steps{background:#101b3f;color:white;position:relative;overflow:hidden}
-    .steps:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,#2457ff55,transparent 32%),radial-gradient(circle at 10% 90%,#19c6d233,transparent 30%)}
+    .service-icon{width:58px;height:58px;border-radius:18px;background:linear-gradient(135deg,#3b210f,#542b10);display:grid;place-items:center;font-size:27px;margin-bottom:22px}
+    .service-card h3{font-size:20px;margin-bottom:9px;color:#fff}
+    .service-card p{font-size:14px;color:#c2c2c2}
+    .steps{background:#080808;color:white;position:relative;overflow:hidden}
+    .steps:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,#ff6a0033,transparent 32%),radial-gradient(circle at 10% 90%,#ff8a261a,transparent 30%)}
     .steps .container{position:relative}
     .steps .section-head p{color:#b9c4df}
     .steps .section-head h2{color:white}
     .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .step{border:1px solid #ffffff1c;background:#ffffff08;border-radius:20px;padding:24px}
-    .step-num{font-size:12px;color:#82f0e8;font-weight:900;letter-spacing:1px;margin-bottom:22px}
-    .step h3{font-size:17px;margin-bottom:8px}.step p{color:#b9c4df;font-size:13px}
-    .pricing{background:#f7f9fc}
+    .step{border:1px solid #333;background:#151515;border-radius:20px;padding:24px}
+    .step-num{font-size:12px;color:#ff8a26;font-weight:900;letter-spacing:1px;margin-bottom:22px}
+    .step h3{font-size:17px;margin-bottom:8px}.step p{color:#c2c2c2;font-size:13px}
+    .pricing{background:#101010}
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
-    .price-card{background:white;border:1px solid var(--line);border-radius:25px;padding:29px;position:relative;box-shadow:0 10px 35px #13275a08}
-    .price-card.featured{border:2px solid var(--blue);box-shadow:0 20px 55px #2457ff18;transform:translateY(-9px)}
-    .popular{position:absolute;right:20px;top:20px;background:#eaf0ff;color:var(--blue);font-size:10px;font-weight:900;padding:6px 10px;border-radius:99px}
-    .price-card h3{font-size:21px;margin-bottom:6px}
-    .price-desc{font-size:13px;color:var(--muted);min-height:44px}
+    .price-card{background:#1a1a1a;border:1px solid #353535;border-radius:25px;padding:29px;position:relative;box-shadow:0 10px 35px #13275a08}
+    .price-card.featured{border:2px solid #ff6a00;box-shadow:0 20px 55px #ff6a0018;transform:translateY(-9px)}
+    .popular{position:absolute;right:20px;top:20px;background:#3a210f;color:#ff9b50;font-size:10px;font-weight:900;padding:6px 10px;border-radius:99px}
+    .price-card h3{font-size:21px;margin-bottom:6px;color:#fff}
+    .price-desc{font-size:13px;color:#c2c2c2;min-height:44px}
     .price{font-size:36px;font-weight:950;letter-spacing:-1.5px;margin:22px 0 4px}
     .price small{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0}
-    .price-note{font-size:12px;color:#98a2b3;margin-bottom:20px}
+    .price-note{font-size:12px;color:#aaa;margin-bottom:20px}
     .features{list-style:none;border-top:1px solid var(--line);padding-top:18px;margin-bottom:25px}
-    .features li{font-size:13px;color:#475467;margin:11px 0;display:flex;gap:9px}
-    .features li:before{content:"✓";color:#0eaf9f;font-weight:900}
+    .features li{font-size:13px;color:#e0e0e0;margin:11px 0;display:flex;gap:9px}
+    .features li:before{content:"✓";color:#ff8a26;font-weight:900}
     .price-card .btn{width:100%}
     .price-edit{font-size:11px;color:#98a2b3;text-align:center;margin-top:10px}
     .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .portfolio-item{border-radius:22px;overflow:hidden;background:#e8edfa;min-height:260px;position:relative;box-shadow:0 12px 30px #13275a10}
-    .portfolio-art{height:100%;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:white;background:linear-gradient(145deg,#13255e,#2864f5 60%,#1dc7c9)}
-    .portfolio-item:nth-child(2) .portfolio-art{background:linear-gradient(145deg,#7b3fdd,#e45da7)}
-    .portfolio-item:nth-child(3) .portfolio-art{background:linear-gradient(145deg,#126b65,#25bca8)}
+    .portfolio-item{border-radius:22px;overflow:hidden;background:#1a1a1a;min-height:260px;position:relative;box-shadow:0 12px 30px #13275a10}
+    .portfolio-art{height:100%;min-height:260px;display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:white;background:linear-gradient(145deg,#311505,#ff6a00 60%,#ff9a3d)}
+    .portfolio-item:nth-child(2) .portfolio-art{background:linear-gradient(145deg,#401d08,#b94b00)}
+    .portfolio-item:nth-child(3) .portfolio-art{background:linear-gradient(145deg,#292929,#555)}
     .portfolio-kicker{font-size:11px;font-weight:850;letter-spacing:1px;opacity:.8}
     .portfolio-art h3{font-size:25px;line-height:1.12;max-width:230px}
     .portfolio-art p{font-size:12px;opacity:.8}
     .play{width:48px;height:48px;border-radius:50%;background:#ffffff25;border:1px solid #ffffff80;display:grid;place-items:center;font-size:18px;backdrop-filter:blur(10px)}
-    .portfolio-note{text-align:center;color:var(--muted);font-size:12px;margin-top:20px}
-    .contact{padding:75px 0;background:linear-gradient(110deg,#e9efff,#e2fbf8)}
-    .contact-box{display:flex;align-items:center;justify-content:space-between;gap:30px;background:#fff;border:1px solid #ffffff;border-radius:28px;padding:40px;box-shadow:var(--shadow)}
+    .portfolio-note{text-align:center;color:#aaa;font-size:12px;margin-top:20px}
+    .contact{padding:75px 0;background:linear-gradient(110deg,#1c120c,#101010)}
+    .contact-box{display:flex;align-items:center;justify-content:space-between;gap:30px;background:#1a1a1a;border:1px solid #353535;border-radius:28px;padding:40px;box-shadow:var(--shadow)}
     .contact-box h2{font-size:clamp(27px,3vw,38px);margin-bottom:10px}
-    .contact-box p{color:var(--muted);max-width:600px}
-    footer{background:#0b1430;color:#aeb8d0;padding:30px 0}
+    .contact-box p{color:#c2c2c2;max-width:600px}
+    footer{background:#050505;color:#c2c2c2;padding:30px 0}
     .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:13px}
     footer .brand{color:white;font-size:21px}
-    .wa-float{position:fixed;right:22px;bottom:22px;z-index:30;width:60px;height:60px;border-radius:50%;background:#19c766;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 12px 30px #19c76655;border:3px solid white;transition:.2s}
+    .wa-float{position:fixed;right:22px;bottom:22px;z-index:30;width:60px;height:60px;border-radius:50%;background:#ff6a00;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 12px 30px #19c76655;border:3px solid white;transition:.2s}
     .wa-float:hover{transform:scale(1.06)}
     @media(max-width:900px){
       .navlinks{gap:14px}.hero-grid{gap:25px}.float-one{left:-5px}.float-two{right:-5px}
@@ -176,30 +176,7 @@
       </div>
     </section>
 
-    <section class="section" id="hizmetler">
-      <div class="container">
-        <div class="section-head"><div class="eyebrow">Neler sunuyoruz?</div><h2>İşletmenizin dijitalde ihtiyacı olan her şey</h2><p>Görünürlüğünüzü artıran, müşterilerinizin size ulaşmasını kolaylaştıran modern ve pratik çözümler.</p></div>
-        <div class="services">
-          <article class="service-card"><div class="service-icon">🎬</div><h3>Konum Tanıtım Videosu</h3><p>İşletmenizin bulunduğu konumu ve ulaşım rotasını dikkat çekici, akıcı ve sosyal medyaya uygun videolarla tanıtın.</p></article>
-          <article class="service-card"><div class="service-icon">📲</div><h3>NFC Dijital Kart</h3><p>Telefon dokunuşuyla iletişim bilgilerinizi, sosyal medya hesaplarınızı ve işletme bağlantılarınızı paylaşın.</p></article>
-          <article class="service-card"><div class="service-icon">▦</div><h3>QR Dijital Kart</h3><p>QR kodunuzu müşterilerinizle paylaşın; işletme bilgilerinize ve dijital kartınıza hızlıca erişmelerini sağlayın.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section steps">
-      <div class="container">
-        <div class="section-head"><div class="eyebrow">Kolay ve hızlı süreç</div><h2>Fikrinizden yayına, dört adımda</h2><p>İşletmenize özel içerikleri birlikte belirliyor, dijital sunumunuzu hazırlıyoruz.</p></div>
-        <div class="steps-grid">
-          <article class="step"><div class="step-num">01 / BİLGİLER</div><h3>İşletmenizi tanıyalım</h3><p>İşletme adı, konum, iletişim ve kullanmak istediğiniz görselleri alınır.</p></article>
-          <article class="step"><div class="step-num">02 / TASARIM</div><h3>Size özel hazırlık</h3><p>Markanıza ve seçtiğiniz pakete uygun video ve dijital kart tasarlanır.</p></article>
-          <article class="step"><div class="step-num">03 / ONAY</div><h3>Kontrol ve düzenleme</h3><p>Hazırlanan çalışma onayınıza sunulur; paket kapsamındaki düzenlemeler yapılır.</p></article>
-          <article class="step"><div class="step-num">04 / TESLİM</div><h3>Paylaşmaya başlayın</h3><p>Dosyalarınız ve dijital bağlantılarınız teslim edilir; tanıtımınıza başlayabilirsiniz.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section pricing" id="paketler">
+<section class="section pricing" id="paketler">
       <div class="container">
         <div class="section-head"><div class="eyebrow">Size uygun paketi seçin</div><h2>İşletmenize göre esnek çözümler</h2><p>Aşağıdaki paket içeriklerini ve fiyatlarını kendi hizmet kapsamınıza göre düzenleyebilirsiniz.</p></div>
         <div class="pricing-grid">
@@ -227,7 +204,7 @@
       </div>
     </section>
 
-    <section class="section" id="ornekler">
+<section class="section" id="ornekler">
       <div class="container">
         <div class="section-head"><div class="eyebrow">Portföy</div><h2>Örnek çalışmalarımız</h2><p>Buradaki alanlara tamamladığınız tanıtım videolarını, müşteri çalışmalarını veya proje bağlantılarını ekleyebilirsiniz.</p></div>
         <div class="portfolio-grid">
@@ -239,7 +216,29 @@
       </div>
     </section>
 
-    <section class="contact" id="iletisim">
+<section class="section steps">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Kolay ve hızlı süreç</div><h2>Fikrinizden yayına, dört adımda</h2><p>İşletmenize özel içerikleri birlikte belirliyor, dijital sunumunuzu hazırlıyoruz.</p></div>
+        <div class="steps-grid">
+          <article class="step"><div class="step-num">01 / BİLGİLER</div><h3>İşletmenizi tanıyalım</h3><p>İşletme adı, konum, iletişim ve kullanmak istediğiniz görselleri alınır.</p></article>
+          <article class="step"><div class="step-num">02 / TASARIM</div><h3>Size özel hazırlık</h3><p>Markanıza ve seçtiğiniz pakete uygun video ve dijital kart tasarlanır.</p></article>
+          <article class="step"><div class="step-num">03 / ONAY</div><h3>Kontrol ve düzenleme</h3><p>Hazırlanan çalışma onayınıza sunulur; paket kapsamındaki düzenlemeler yapılır.</p></article>
+          <article class="step"><div class="step-num">04 / TESLİM</div><h3>Paylaşmaya başlayın</h3><p>Dosyalarınız ve dijital bağlantılarınız teslim edilir; tanıtımınıza başlayabilirsiniz.</p></article>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="hizmetler">
+      <div class="container">
+        <div class="section-head"><div class="eyebrow">Neler sunuyoruz?</div><h2>İşletmenizin dijitalde ihtiyacı olan her şey</h2><p>Görünürlüğünüzü artıran, müşterilerinizin size ulaşmasını kolaylaştıran modern ve pratik çözümler.</p></div>
+        <div class="services">
+          <article class="service-card"><div class="service-icon">🎬</div><h3>Konum Tanıtım Videosu</h3><p>İşletmenizin bulunduğu konumu ve ulaşım rotasını dikkat çekici, akıcı ve sosyal medyaya uygun videolarla tanıtın.</p></article>
+          <article class="service-card"><div class="service-icon">📲</div><h3>NFC Dijital Kart</h3><p>Telefon dokunuşuyla iletişim bilgilerinizi, sosyal medya hesaplarınızı ve işletme bağlantılarınızı paylaşın.</p></article>
+          <article class="service-card"><div class="service-icon">✨</div><h3>Yapay Zekâ ile Görseli Videoya Çevirme</h3><p>Fotoğraflarınızı yapay zekâ destekli hareketli videolara dönüştürerek işletmeniz ve markanız için dikkat çekici içerikler oluşturun.</p></article>
+        </div>
+      </div>
+    </section>
+ntact" id="iletisim">
       <div class="container contact-box">
         <div><div class="eyebrow">Hemen başlayalım</div><h2>İşletmenizi Tamburada ile tanıtmaya hazır mısınız?</h2><p>İşletme bilgilerinizi ve ihtiyacınızı paylaşın. Size uygun hizmet ve fiyat teklifini birlikte netleştirelim.</p></div>
         <a class="btn btn-primary whatsapp-link" href="#">WhatsApp'tan İletişime Geç ↗</a>
