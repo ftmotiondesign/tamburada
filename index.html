@@ -123,7 +123,7 @@
       .services,.pricing-grid{grid-template-columns:repeat(2,1fr)}.steps-grid{grid-template-columns:repeat(2,1fr)}
       .portfolio-grid{grid-template-columns:repeat(2,1fr)}
     }
-    @media(max-width:680px){
+    @media(max-width:680px){.pricing-grid{grid-template-columns:1fr!important}
       .container{width:min(100% - 30px,560px)}
       .nav{height:68px}.menu-toggle{display:block}.nav-cta{display:none}
       .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;padding:18px 24px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}
@@ -235,32 +235,34 @@
 <section class="section pricing" id="paketler">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Tek Fiyat, Eksiksiz Hizmet</div>
-      <h2>Konum videonu kendin oluştur</h2>
-      <p>Başlangıç paketini seç, ihtiyacın olan ek hizmetleri ekle. Toplam fiyat anında güncellensin.</p>
+      <div class="eyebrow">Paketini Seç</div>
+      <h2>İhtiyacına uygun paketi oluştur</h2>
+      <p>İki paketten birini seç, ek hizmetleri işaretle. Toplam fiyat anında güncellensin.</p>
     </div>
-    <div class="builder-card">
-      <div class="builder-main">
-        <div>
-          <span class="builder-label">BAŞLANGIÇ PAKETİ</span>
-          <h3>1 Adet Konum Tanıtım Videosu</h3>
-          <p>İşletmenizin konumunu anlaşılır ve dikkat çekici bir videoyla gösterin.</p>
+    <div class="pricing-grid" style="grid-template-columns:repeat(2,1fr);max-width:920px;margin:auto;">
+      <div class="builder-card" data-package="1">
+        <div class="builder-main"><div><span class="builder-label">PAKET 1</span><h3>Konum Videosu</h3><p>1 adet temel konum tanıtım videosu.</p></div><div class="builder-base-price">250 TL</div></div>
+        <div class="builder-divider"></div><h4>Ek hizmetler</h4>
+        <div class="addon-list">
+          <label class="addon"><input type="checkbox" class="p1-addon" data-price="50" data-name="Yakınlardaki bilinen yerleri gösterme"><span class="check-ui"></span><span class="addon-text"><b>Yakınlardaki bilinen yerleri gösterme</b></span><strong>+50 TL</strong></label>
+          <label class="addon"><input type="checkbox" class="p1-addon" data-price="50" data-name="Lokasyon üzerindeki cadde ismini yazma"><span class="check-ui"></span><span class="addon-text"><b>Lokasyon üzerindeki cadde ismini yazma</b></span><strong>+50 TL</strong></label>
+          <label class="addon"><input type="checkbox" class="p1-addon" data-price="100" data-name="Seslendirme + işletme bina resmi ekleme"><span class="check-ui"></span><span class="addon-text"><b>Seslendirme + işletme bina resmi ekleme</b></span><strong>+100 TL</strong></label>
+          <label class="addon"><input type="checkbox" class="p1-addon" data-price="500" data-name="360° iç mekân çekimi"><span class="check-ui"></span><span class="addon-text"><b>360° iç mekân çekimi</b></span><strong>+500 TL</strong></label>
         </div>
-        <div class="builder-base-price">250 TL</div>
+        <div class="builder-total"><div><small>Toplam</small><div id="p1Total">250 TL</div></div><a class="btn btn-primary" id="p1Order" href="#">WhatsApp'tan Sipariş Ver ↗</a></div>
       </div>
-      <div class="builder-divider"></div>
-      <h4>Ek hizmetler</h4>
-      <div class="addon-list">
-        <label class="addon"><input type="checkbox" class="addon-check" data-price="50" data-name="Yakınlardaki bilinen yerleri gösterme"><span class="check-ui"></span><span class="addon-text"><b>Yakınlardaki bilinen yerleri gösterme</b><small>Çevredeki bilinen noktaları videoda belirtin.</small></span><strong>+50 TL</strong></label>
-        <label class="addon"><input type="checkbox" class="addon-check" data-price="50" data-name="Lokasyon üzerindeki cadde ismini yazma"><span class="check-ui"></span><span class="addon-text"><b>Lokasyon üzerindeki cadde ismini yazma</b><small>Cadde bilgisini videoda görünür hale getirin.</small></span><strong>+50 TL</strong></label>
-        <label class="addon"><input type="checkbox" class="addon-check" data-price="100" data-name="Seslendirme + işletme bina resmi ekleme"><span class="check-ui"></span><span class="addon-text"><b>Seslendirme + işletme bina resmi ekleme</b><small>Videoyu profesyonel seslendirme ve işletme görseliyle güçlendirin.</small></span><strong>+100 TL</strong></label>
-        <label class="addon"><input type="checkbox" class="addon-check" data-price="500" data-name="360 derece iç mekan çekimi"><span class="check-ui"></span><span class="addon-text"><b>360° iç mekan çekimi</b><small>Müşterilerinize işletmenizin içini 360° deneyimle gösterin.</small></span><strong>+500 TL</strong></label>
+      <div class="builder-card" data-package="2" style="border:2px solid #ff6a00;">
+        <div class="builder-main"><div><span class="builder-label">PAKET 2 • AVANTAJLI</span><h3>Konum Videosu + Dijital Kartvizit</h3><p>Konum videonuzu dijital iletişim çözümleriyle tamamlayın.</p></div><div class="builder-base-price">650 TL</div></div>
+        <div class="builder-divider"></div><h4>Pakete dahil</h4>
+        <div class="addon-list">
+          <div class="addon"><span class="check-ui" style="background:#ff6a00;border-color:#ff6a00;">✓</span><span class="addon-text"><b>Konum Videosu + Dijital Kartvizit</b></span><strong>DAHİL</strong></div>
+          <div class="addon"><span class="check-ui" style="background:#ff6a00;border-color:#ff6a00;">✓</span><span class="addon-text"><b>NFC & QR Kart</b><small>Google Yorum • Instagram • WhatsApp</small></span><strong style="color:#ff8a26">ÜCRETSİZ</strong></div>
+          <div class="addon"><span class="check-ui" style="background:#ff6a00;border-color:#ff6a00;">✓</span><span class="addon-text"><b>Dükkan Camı Karekod</b></span><strong style="color:#ff8a26">ÜCRETSİZ</strong></div>
+        </div>
+        <div class="builder-divider"></div><h4>Ek hizmet</h4>
+        <div class="addon-list"><label class="addon"><input type="checkbox" id="p2-360" data-price="500" data-name="360° iç mekân çekimi"><span class="check-ui"></span><span class="addon-text"><b>360° iç mekân çekimi</b></span><strong>+500 TL</strong></label></div>
+        <div class="builder-total"><div><small>Toplam</small><div id="p2Total">650 TL</div></div><a class="btn btn-primary" id="p2Order" href="#">WhatsApp'tan Sipariş Ver ↗</a></div>
       </div>
-      <div class="builder-total">
-        <div><small>Seçiminize göre toplam</small><div id="totalPrice">250 TL</div></div>
-        <a class="btn btn-primary" id="builderOrder" href="#">WhatsApp'tan Sipariş Ver ↗</a>
-      </div>
-      <div class="builder-note">Başlangıç fiyatı 250 TL'dir. Seçtiğiniz ek hizmetler toplam fiyata otomatik eklenir.</div>
     </div>
   </div>
 </section>
@@ -359,23 +361,19 @@
     const waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(DEFAULT_MESSAGE);
     document.querySelectorAll(".whatsapp-link").forEach(link => link.href = waUrl);
 
-    const BASE_PRICE = 250;
-    const addonChecks = document.querySelectorAll(".addon-check");
-    const totalPriceEl = document.getElementById("totalPrice");
-    const builderOrder = document.getElementById("builderOrder");
-    function updateBuilder(){
-      let total = BASE_PRICE;
-      const selected = [];
-      addonChecks.forEach(item => {
-        if(item.checked){ total += Number(item.dataset.price); selected.push("• " + item.dataset.name + " (+" + item.dataset.price + " TL)"); }
-      });
-      totalPriceEl.textContent = total.toLocaleString("tr-TR") + " TL";
-      const extras = selected.length ? selected.join("\n") : "Ek hizmet seçilmedi.";
-      const msg = "Merhaba, Tamburada Konum Videosu paketi için sipariş vermek istiyorum.\n\nBaşlangıç Paketi: 1 Konum Tanıtım Videosu — 250 TL\n\nEk Hizmetler:\n" + extras + "\n\nToplam: " + total.toLocaleString("tr-TR") + " TL";
-      builderOrder.href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+    function setOrder(checks, base, totalEl, orderEl, packageName, includedText){
+      let total=base; const selected=[];
+      checks.forEach(item=>{if(item.checked){total+=Number(item.dataset.price);selected.push("• "+item.dataset.name+" (+"+item.dataset.price+" TL)");}});
+      totalEl.textContent=total.toLocaleString("tr-TR")+" TL";
+      const extras=selected.length?selected.join("\n"):"Ek hizmet seçilmedi.";
+      const msg="Merhaba, "+packageName+" paketini sipariş vermek istiyorum.\n\n"+includedText+"\n\nEk Hizmetler:\n"+extras+"\n\nToplam: "+total.toLocaleString("tr-TR")+" TL";
+      orderEl.href="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(msg);
     }
-    addonChecks.forEach(item => item.addEventListener("change", updateBuilder));
-    updateBuilder();
+    const p1Checks=[...document.querySelectorAll(".p1-addon")];
+    const p2Checks=[document.getElementById("p2-360")];
+    function updateP1(){setOrder(p1Checks,250,document.getElementById("p1Total"),document.getElementById("p1Order"),"Tamburada Konum Videosu","Paket 1: 1 Konum Tanıtım Videosu — 250 TL");}
+    function updateP2(){setOrder(p2Checks,650,document.getElementById("p2Total"),document.getElementById("p2Order"),"Tamburada Konum Videosu + Dijital Kartvizit","Paket 2: Konum Videosu + Dijital Kartvizit — 650 TL\n• NFC & QR Kart — ÜCRETSİZ\n• Dükkan Camı Karekod — ÜCRETSİZ");}
+    p1Checks.forEach(i=>i.addEventListener("change",updateP1)); p2Checks.forEach(i=>i.addEventListener("change",updateP2)); updateP1(); updateP2();
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
