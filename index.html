@@ -297,31 +297,7 @@ a.btn.whatsapp-link:hover,
   border-color:#ff8a26!important;
   transform:translateY(-2px);
 }
-.ai-reels-float{
-  position: fixed;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  z-index: 9999;
-  white-space: nowrap;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
-}
 
-@media (min-width: 769px){
-  .ai-reels-float{
-    left: auto;
-    right: 20px;
-    bottom: 100px;
-    transform: none;
-  }
-}
-
-@media (max-width: 768px){
-  .ai-reels-float{
-    width: calc(100% - 32px);
-    justify-content: center;
-  }
-}
 
 /* Örnek çalışmalar - 1080x1920 GIF alanları */
 .portfolio-gif-wrap{
@@ -358,6 +334,34 @@ a.btn.whatsapp-link:hover,
 }
 @media(max-width:700px){
   .portfolio-gif-wrap{max-height:none}
+}
+
+
+/* AI Görselden Reels butonu - sabit görünür */
+.ai-reels-float{
+  position:fixed!important;
+  left:auto!important;
+  right:22px!important;
+  bottom:96px!important;
+  transform:none!important;
+  z-index:9999!important;
+  white-space:nowrap!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.38)!important;
+}
+
+.ai-reels-float:hover{
+  transform:translateY(-2px)!important;
+}
+
+@media(max-width:768px){
+  .ai-reels-float{
+    left:16px!important;
+    right:16px!important;
+    bottom:92px!important;
+    width:auto!important;
+    justify-content:center!important;
+    text-align:center!important;
+  }
 }
 
 </style>
