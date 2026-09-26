@@ -143,7 +143,18 @@
 
 
 
-  </style>
+  
+    .portfolio-item{display:flex;flex-direction:column;cursor:default}
+    .portfolio-video-wrap{width:100%;aspect-ratio:9/16;max-height:420px;background:#080808;overflow:hidden;position:relative}
+    .portfolio-video{width:100%;height:100%;display:block;object-fit:cover;background:#080808}
+    .portfolio-caption{padding:18px 20px 20px;min-height:118px;display:flex;flex-direction:column;gap:8px}
+    .portfolio-caption .portfolio-kicker{color:#ff6a00;font-size:11px;font-weight:850;letter-spacing:1px}
+    .portfolio-caption h3{font-size:21px;line-height:1.2;margin:0;color:#fff}
+    .portfolio-caption p{font-size:13px;color:#bdbdbd;margin:0}
+    .portfolio-item .play{position:absolute;left:50%;top:calc((100% - 118px)/2);transform:translate(-50%,-50%);z-index:2;pointer-events:none;background:#ff6a00;color:#fff;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px #0008}
+    @media(max-width:700px){.portfolio-video-wrap{max-height:520px}.portfolio-caption h3{font-size:19px}}
+
+</style>
 </head>
 <body>
   <div class="topbar">İşletmenizi dijitalde bir adım öne taşıyın. <b>Video + NFC + QR çözümleri</b></div>
@@ -219,11 +230,47 @@
       <div class="container">
         <div class="section-head"><div class="eyebrow">Portföy</div><h2>Örnek çalışmalarımız</h2><p>Buradaki alanlara tamamladığınız tanıtım videolarını, müşteri çalışmalarını veya proje bağlantılarını ekleyebilirsiniz.</p></div>
         <div class="portfolio-grid">
-          <a class="portfolio-item" href="#iletisim"><div class="portfolio-art"><span class="portfolio-kicker">KONUM TANITIMI</span><div><h3>İşletmenizin yolunu müşterinize gösterin.</h3><p>Örnek video alanı • 01</p></div><span class="play">▶</span></div></a>
-          <a class="portfolio-item" href="#iletisim"><div class="portfolio-art"><span class="portfolio-kicker">NFC + QR KART</span><div><h3>Tek dokunuşla dijital bağlantı.</h3><p>Örnek proje alanı • 02</p></div><span class="play">↗</span></div></a>
-          <a class="portfolio-item" href="#iletisim"><div class="portfolio-art"><span class="portfolio-kicker">GÖRSEL DÖNÜŞÜM</span><div><h3>Markanız için dikkat çekici içerikler.</h3><p>Örnek proje alanı • 03</p></div><span class="play">▶</span></div></a>
+          <div class="portfolio-item">
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" poster="">
+                <source src="./videos/konum-tanitim.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
+            </div>
+            <div class="portfolio-caption">
+              <span class="portfolio-kicker">01 • KONUM TANITIMI</span>
+              <h3>Konum Tanıtımı Videosu</h3>
+              <p>İşletmenizin konumunu ve ulaşım rotasını tanıtan örnek çalışma.</p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" poster="">
+                <source src="./videos/nfc-qr-kart.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
+            </div>
+            <div class="portfolio-caption">
+              <span class="portfolio-kicker">02 • NFC + QR</span>
+              <h3>NFC&QR Kart</h3>
+              <p>Tek dokunuşla dijital kart ve bağlantı deneyimi.</p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <div class="portfolio-video-wrap">
+              <video class="portfolio-video" controls playsinline preload="metadata" poster="">
+                <source src="./videos/gorselden-video.mp4" type="video/mp4">
+                Tarayıcınız video oynatmayı desteklemiyor.
+              </video>
+            </div>
+            <div class="portfolio-caption">
+              <span class="portfolio-kicker">03 • YAPAY ZEKÂ</span>
+              <h3>Görselden Video</h3>
+              <p>Tek bir görseli etkileyici, hareketli video içeriğine dönüştürme.</p>
+            </div>
+          </div>
         </div>
-        <p class="portfolio-note">Gerçek video ve proje bağlantılarınız hazır olduğunda bu örnek alanları güncelleyebilirsiniz.</p>
+        <p class="portfolio-note">Videoları oynatmak için GitHub deposundaki videos klasörüne ilgili MP4 dosyalarını yükleyin.</p>
       </div>
     </section>
 
