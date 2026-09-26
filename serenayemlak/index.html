@@ -1,495 +1,515 @@
-```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#090909" />
+  <title>Serenay Emlak | Dijital Kartvizit</title>
 
-    <title>Serenay Emlak | Tamburada</title>
+  <style>
+    :root{
+      --bg:#090909;
+      --card:#151515;
+      --card-2:#1c1c1c;
+      --line:#2b2b2b;
+      --text:#ffffff;
+      --muted:#a7a7a7;
+      --orange:#ff6900;
+      --orange-2:#ff7a00;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,105,0,.16), transparent 28%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b0b;
-            color: #ffffff;
-            min-height: 100vh;
-        }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
 
-        .page {
-            width: 100%;
-            max-width: 480px;
-            margin: auto;
-            padding: 22px 18px 30px;
-        }
+    .page{
+      width:min(100%, 560px);
+      margin:0 auto;
+      padding:18px 16px 34px;
+    }
 
-        .brand {
-            text-align: center;
-            font-size: 23px;
-            font-weight: 800;
-            margin-bottom: 30px;
-        }
+    .hero{
+      position:relative;
+      overflow:hidden;
+      min-height:380px;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.82)),
+        url("kapak.jpg") center/cover no-repeat,
+        linear-gradient(135deg,#262626,#0f0f0f 60%,#1d0d02);
+      box-shadow:0 28px 70px rgba(0,0,0,.45);
+    }
 
-        .brand span {
-            color: #ff6a00;
-        }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 75% 15%, rgba(255,105,0,.35), transparent 28%),
+        linear-gradient(180deg, transparent 35%, rgba(0,0,0,.86) 92%);
+      pointer-events:none;
+    }
 
-        .business-card {
-            background: linear-gradient(145deg, #1c1c1c, #111111);
-            border: 1px solid #292929;
-            border-radius: 24px;
-            padding: 28px 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
-            margin-bottom: 18px;
-        }
+    .hero-content{
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:26px 22px 24px;
+      z-index:1;
+    }
 
-        .business-logo {
-            width: 86px;
-            height: 86px;
-            margin: auto;
-            border-radius: 50%;
-            background: #ff6a00;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 34px;
-            font-weight: 800;
-            box-shadow: 0 8px 25px rgba(255,106,0,0.25);
-            margin-bottom: 16px;
-        }
+    .logo-wrap{
+      width:92px;
+      height:92px;
+      display:grid;
+      place-items:center;
+      margin-bottom:16px;
+      border-radius:28px;
+      background:var(--orange);
+      box-shadow:0 14px 35px rgba(255,105,0,.28);
+      overflow:hidden;
+    }
 
-        .business-name {
-            font-size: 25px;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
+    .logo-wrap img{
+      width:82%;
+      height:82%;
+      object-fit:contain;
+    }
 
-        .address {
-            color: #999999;
-            font-size: 14px;
-        }
+    .eyebrow{
+      color:#ffb174;
+      font-size:13px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:800;
+      margin-bottom:6px;
+    }
 
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
 
-        .button {
-            width: 100%;
-            min-height: 62px;
-            border-radius: 17px;
-            text-decoration: none;
-            color: #ffffff;
-            background: #181818;
-            border: 1px solid #292929;
-            display: flex;
-            align-items: center;
-            padding: 0 18px;
-            transition: 0.2s ease;
-        }
+    .subtitle{
+      margin:9px 0 0;
+      color:#d4d4d4;
+      font-size:15px;
+    }
 
-        .button:hover {
-            transform: translateY(-2px);
-            border-color: #ff6a00;
-        }
+    .actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:11px;
+      margin-top:15px;
+    }
 
-        .icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 13px;
-            background: #252525;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-right: 14px;
-            flex-shrink: 0;
-        }
+    .action{
+      min-height:92px;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:linear-gradient(180deg,#1b1b1b,#131313);
+      padding:15px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      transition:.18s ease;
+    }
 
-        .button-text {
-            text-align: left;
-            flex: 1;
-        }
+    .action:active{transform:scale(.985)}
 
-        .button-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 3px;
-        }
+    .icon{
+      flex:0 0 48px;
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:24px;
+      background:#242424;
+      overflow:hidden;
+    }
 
-        .button-description {
-            font-size: 12px;
-            color: #888888;
-        }
+    .brand-icon svg{
+      width:28px;
+      height:28px;
+      display:block;
+    }
 
-        .arrow {
-            color: #666666;
-            font-size: 20px;
-        }
+    .whatsapp-icon{
+      background:#25D366 !important;
+    }
 
-        .google {
-            background: #ff6a00;
-            border-color: #ff6a00;
-        }
+    .instagram-icon{
+      background:radial-gradient(circle at 30% 110%, #ffd600 0 18%, #ff7a00 28%, #ff0169 52%, #d300c5 72%, #7638fa 100%) !important;
+    }
 
-        .google .icon {
-            background: rgba(0,0,0,0.15);
-        }
+    .action strong{
+      display:block;
+      font-size:15px;
+      line-height:1.15;
+      margin-bottom:5px;
+    }
 
-        .google .button-description {
-            color: rgba(255,255,255,0.75);
-        }
+    .action span{
+      display:block;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.25;
+    }
 
-        .google .arrow {
-            color: white;
-        }
+    .action.primary .icon{
+      background:var(--orange);
+    }
 
-        .video {
-            background: linear-gradient(145deg, #242424, #171717);
-            border-color: #ff6a00;
-        }
+    .cta{
+      width:100%;
+      border:0;
+      margin-top:14px;
+      border-radius:20px;
+      background:linear-gradient(90deg,var(--orange),var(--orange-2));
+      color:#fff;
+      min-height:64px;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:11px;
+      font-size:19px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 14px 34px rgba(255,105,0,.22);
+    }
 
-        .video .icon {
-            background: #ff6a00;
-        }
+    .review{
+      margin-top:12px;
+      border:1px solid rgba(255,105,0,.55);
+      background:linear-gradient(180deg,#1b130e,#151515);
+    }
 
-        .share {
-            cursor: pointer;
-            font-family: Arial, sans-serif;
-        }
+    .section{
+      margin-top:23px;
+    }
 
-        .footer {
-            text-align: center;
-            margin-top: 28px;
-            color: #666666;
-            font-size: 12px;
-            line-height: 1.6;
-        }
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:12px;
+    }
 
-        .footer strong {
-            color: #ff6a00;
-            font-size: 14px;
-        }
+    .section h2{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
 
-        .share-message {
-            text-align: center;
-            color: #ff6a00;
-            font-size: 13px;
-            margin-top: 10px;
-            display: none;
-        }
-.business-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-    padding: 10px;
-    display: block;
-}
-        @media (max-width: 360px) {
-            .page {
-                padding: 18px 14px 25px;
-            }
+    .section small{color:var(--muted)}
 
-            .business-name {
-                font-size: 22px;
-            }
-        }
-    </style>
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+    }
+
+    .gallery-card{
+      position:relative;
+      aspect-ratio:3/4;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.68)),
+        linear-gradient(135deg,#292929,#151515);
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .gallery-label{
+      position:absolute;
+      left:10px;
+      right:10px;
+      bottom:10px;
+      font-size:12px;
+      font-weight:800;
+      text-shadow:0 2px 12px #000;
+    }
+
+    .media-stack{
+      display:grid;
+      gap:12px;
+      margin-top:14px;
+    }
+
+    .video-card{
+      padding:18px;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:linear-gradient(135deg,#1d1d1d,#111);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+
+    .video-left{
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .play{
+      width:52px;height:52px;
+      border-radius:17px;
+      background:var(--orange);
+      display:grid;
+      place-items:center;
+      font-size:24px;
+      flex:0 0 52px;
+    }
+
+    .video-card strong{display:block;margin-bottom:4px}
+    .video-card span{color:var(--muted);font-size:12px}
+
+    .arrow{
+      color:#777;
+      font-size:22px;
+    }
+
+    footer{
+      text-align:center;
+      color:#777;
+      font-size:12px;
+      padding:30px 0 4px;
+    }
+
+    footer b{color:var(--orange)}
+
+    @media (max-width:430px){
+      .page{padding-left:12px;padding-right:12px}
+      .hero{min-height:350px;border-radius:26px}
+      h1{font-size:30px}
+      .action{min-height:88px;padding:13px}
+      .icon{width:44px;height:44px;flex-basis:44px;border-radius:14px}
+    }
+
+    @media (max-width:360px){
+      .actions{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr 1fr}
+      .gallery-card:last-child{display:none}
+    }
+  </style>
 </head>
 
 <body>
+  <main class="page">
 
-<div class="page">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="logo-wrap">
+          <img src="logo.png" alt="Serenay Emlak Logo">
+        </div>
+        <div class="eyebrow">Çanakkale</div>
+        <h1>Serenay Emlak</h1>
+        <p class="subtitle">Satılık • Kiralık • Arsa • Gayrimenkul Danışmanlığı</p>
+      </div>
+    </section>
 
-    <div class="brand">
-        tamburada<span>.</span>
-    </div>
+    <!-- GOOGLE YORUM: Hızlı bağlantıların en üstünde -->
+    <a class="action review" href="#" target="_blank" rel="noopener">
+      <div class="icon">⭐</div>
+      <div style="flex:1">
+        <strong>Google'da Yorum Yap</strong>
+        <span>Deneyiminizi paylaşın</span>
+      </div>
+      <div class="arrow">›</div>
+    </a>
 
+    <section class="actions" aria-label="Hızlı bağlantılar">
+      <a class="action primary" href="tel:+905305441777">
+        <div class="icon">☎️</div>
+        <div>
+          <strong>Telefon</strong>
+          <span>Hemen Ara</span>
+        </div>
+      </a>
 
-    <!-- İŞLETME -->
+      <a class="action primary" href="https://wa.me/905305441777" target="_blank" rel="noopener">
+        <div class="icon brand-icon whatsapp-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <path fill="#fff" d="M16 5.3c-5.8 0-10.5 4.5-10.5 10.1 0 2 .6 3.9 1.7 5.5L5.5 26.8l6.1-1.6c1.4.7 2.9 1 4.4 1 5.8 0 10.5-4.5 10.5-10.1S21.8 5.3 16 5.3Zm0 18.2c-1.4 0-2.8-.4-4-1.1l-.4-.2-3.6.9 1-3.4-.2-.4a7.7 7.7 0 0 1-1.2-4.1c0-4.2 3.6-7.7 8.4-7.7s8.4 3.4 8.4 7.7-3.6 8.3-8.4 8.3Zm4.6-5.8c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.2-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2.1-.3 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.1 5.1 4.3.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.6-.3Z"/>
+          </svg>
+        </div>
+        <div>
+          <strong>WhatsApp</strong>
+          <span>Mesaj Gönder</span>
+        </div>
+      </a>
 
-    <div class="business-card">
+      <a class="action" href="#" target="_blank" rel="noopener">
+        <div class="icon brand-icon instagram-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect x="7" y="7" width="18" height="18" rx="5.5" stroke="#fff" stroke-width="2.4"/>
+            <circle cx="16" cy="16" r="4.3" stroke="#fff" stroke-width="2.4"/>
+            <circle cx="21.6" cy="10.6" r="1.35" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <strong>Instagram</strong>
+          <span>Takip Et</span>
+        </div>
+      </a>
 
-       <div class="business-logo">
-    <img src="logo.png" alt="Serenay Emlak">
-</div>
+      <a class="action" href="https://www.google.com/maps/search/?api=1&query=Serenay+Emlak+Çanakkale" target="_blank" rel="noopener">
+        <div class="icon">📍</div>
+        <div>
+          <strong>Konum</strong>
+          <span>Haritada Gör</span>
+        </div>
+      </a>
 
-        <div class="business-name">
-            Serenay Emlak
+      <a class="action" href="#">
+        <div class="icon">🌐</div>
+        <div>
+          <strong>Web Sitesi</strong>
+          <span>Ziyaret Et</span>
+        </div>
+      </a>
+
+      <a class="action" href="mailto:">
+        <div class="icon">✉️</div>
+        <div>
+          <strong>E-posta</strong>
+          <span>Mesaj Gönder</span>
+        </div>
+      </a>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>İşletmeden Kareler</h2>
+          <small>Mekan, ofis ve çekim alanları</small>
+        </div>
+      </div>
+
+      <!--
+        Aynı klasöre şu isimlerle fotoğraf ekleyin:
+        mekan1.jpg  -> dış cephe / giriş
+        mekan2.jpg  -> iç mekan / ofis
+        mekan3.jpg  -> detay / vitrin / çalışma alanı
+      -->
+      <div class="gallery">
+        <div class="gallery-card">
+          <img src="mekan1.jpg" alt="Serenay Emlak dış mekan" onerror="this.style.display='none'">
+          <div class="gallery-label">Dış Cephe</div>
         </div>
 
-        <div class="address">
-            📍 Çanakkale
+        <div class="gallery-card">
+          <img src="mekan2.jpg" alt="Serenay Emlak iç mekan" onerror="this.style.display='none'">
+          <div class="gallery-label">İç Mekan</div>
         </div>
 
-    </div>
+        <div class="gallery-card">
+          <img src="mekan3.jpg" alt="Serenay Emlak ofis detay" onerror="this.style.display='none'">
+          <div class="gallery-label">Ofis & Detaylar</div>
+        </div>
+      </div>
 
-
-    <!-- BUTONLAR -->
-
-    <div class="buttons">
-
-
-        <!-- GOOGLE YORUM -->
-
-        <a class="button google"
-           href="https://search.google.com/local/writereview?placeid=ChIJAVlbshWpsRQRW-G_Pxevwmo"
-           target="_blank">
-
-            <div class="icon">
-                ⭐
+      <div class="media-stack">
+        <!-- 360 tur linki varsa buraya ekleyin -->
+        <a class="video-card" href="#" target="_blank" rel="noopener">
+          <div class="video-left">
+            <div class="play">360°</div>
+            <div>
+              <strong>360° Sanal Tur</strong>
+              <span>Mekanı interaktif olarak gez</span>
             </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    Google'da Yorum Yap
-                </div>
-
-                <div class="button-description">
-                    Deneyiminizi paylaşın
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
+          </div>
+          <div class="arrow">›</div>
         </a>
 
-
-        <!-- TELEFON -->
-
-        <a class="button"
-           href="tel:+905305441777">
-
-            <div class="icon">
-                📞
+        <!-- Konum videosu -->
+        <a class="video-card" href="../videos/konum-tanitim.mp4" target="_blank">
+          <div class="video-left">
+            <div class="play">▶</div>
+            <div>
+              <strong>Konum Videosu</strong>
+              <span>İşletmeye ulaşımı videoda keşfedin</span>
             </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    Telefonla Ara
-                </div>
-
-                <div class="button-description">
-                    0530 544 17 77
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
+          </div>
+          <div class="arrow">›</div>
         </a>
 
-
-        <!-- WHATSAPP -->
-
-        <a class="button"
-           href="https://wa.me/905305441777"
-           target="_blank">
-
-            <div class="icon">
-                💬
+        <!-- Mekan tanıtım videosu -->
+        <a class="video-card" href="#" target="_blank" rel="noopener">
+          <div class="video-left">
+            <div class="play">🎬</div>
+            <div>
+              <strong>Mekan Tanıtım Videosu</strong>
+              <span>Ofis ve hizmet alanlarını izleyin</span>
             </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    WhatsApp'tan Ulaş
-                </div>
-
-                <div class="button-description">
-                    Hızlıca iletişime geçin
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
+          </div>
+          <div class="arrow">›</div>
         </a>
+      </div>
+    </section>
 
+    <button class="video-card" type="button" onclick="paylas()" style="width:100%;color:white;text-align:left;cursor:pointer;margin-top:14px;">
+      <div class="video-left">
+        <div class="play" style="background:#242424">↗</div>
+        <div>
+          <strong>İşletmeyi Paylaş</strong>
+          <span>Bu sayfayı arkadaşlarınıza gönderin</span>
+        </div>
+      </div>
+      <div class="arrow">›</div>
+    </button>
 
-        <!-- KONUM -->
+    <footer>
+      <b>tamburada.</b><br>
+      Dijital işletme kartı
+    </footer>
 
-        <a class="button"
-           href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14b1a915b25b5901:0x6ac2af173fbfe15b?sa=X&ved=1t:8290&hl=tr-TR&gl=tr&ictx=111&cshid=1790316664085779"
-           target="_blank">
+  </main>
 
-            <div class="icon">
-                📍
-            </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    Konumu Aç
-                </div>
-
-                <div class="button-description">
-                    Google Maps'te yol tarifi alın
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
-        </a>
-
-
-        <!-- KONUM VİDEOSU -->
-
-       <a class="button video"
-   href="https://www.youtube.com/shorts/rKnS-kjQtQ0"
-   target="_blank">
-
-            <div class="icon">
-                ▶
-            </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    Konum Videosunu İzle
-                </div>
-
-                <div class="button-description">
-                    İşletmenin konumunu videoda keşfedin
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
-        </a>
-
-        
-        <!-- E-POSTA -->
-
-        <a class="button"
-           href="mailto:info@serenayemlak.com">
-
-            <div class="icon">
-                ✉️
-            </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    E-posta Gönder
-                </div>
-
-                <div class="button-description">
-                    E-posta ile bizimle iletişime geçin
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
-        </a>
-
-        <!-- PAYLAŞ -->
-
-        <button class="button share"
-                onclick="sharePage()">
-
-            <div class="icon">
-                ↗
-            </div>
-
-            <div class="button-text">
-
-                <div class="button-title">
-                    İşletmeyi Paylaş
-                </div>
-
-                <div class="button-description">
-                    Bu sayfayı arkadaşlarınıza gönderin
-                </div>
-
-            </div>
-
-            <div class="arrow">
-                ›
-            </div>
-
-        </button>
-
-    </div>
-
-
-    <div id="shareMessage" class="share-message">
-        ✓ Bağlantı kopyalandı
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <strong>tamburada.</strong><br>
-
-        Dijital işletme kartı
-
-    </div>
-
-</div>
-
-
-<script>
-
-function sharePage() {
-
-    const shareData = {
+  <script>
+    async function paylas(){
+      const data = {
         title: "Serenay Emlak",
-        text: "Serenay Emlak iletişim ve konum bilgileri",
+        text: "Serenay Emlak dijital işletme kartı",
         url: window.location.href
-    };
+      };
 
-    if (navigator.share) {
-
-        navigator.share(shareData);
-
-    } else {
-
-        navigator.clipboard.writeText(window.location.href);
-
-        const message = document.getElementById("shareMessage");
-
-        message.style.display = "block";
-
-        setTimeout(function() {
-            message.style.display = "none";
-        }, 2500);
-
+      if (navigator.share) {
+        try { await navigator.share(data); } catch(e) {}
+      } else {
+        try {
+          await navigator.clipboard.writeText(window.location.href);
+          alert("Sayfa bağlantısı kopyalandı.");
+        } catch(e) {
+          prompt("Bağlantıyı kopyalayın:", window.location.href);
+        }
+      }
     }
-
-}
-
-</script>
-
+  </script>
 </body>
 </html>
-```
